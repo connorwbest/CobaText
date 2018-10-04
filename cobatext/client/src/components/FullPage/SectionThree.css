@@ -1,0 +1,30 @@
+.promo {
+    text-align: center;
+    background-color: black;
+    height: 100%;
+    width: 100;
+};
+
+.section {
+    margin: none;
+    overflow: hidden;
+}
+
+.shell {
+    position: relative;
+    top: 5vh;
+    width:80%;
+    height: 80%;
+    align-self: center;
+    margin: auto;
+}
+
+.promo-header {
+    font-size: 5rem;
+    color: #FFC904;
+    text-align: left;
+}
+
+.shell-body {
+    color: #fff;
+}

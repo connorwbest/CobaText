@@ -1,0 +1,36 @@
+.start {
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    background-color: black;
+    height: 100%;
+    width: 100;
+};
+
+.section {
+    margin: none;
+    overflow: hidden;
+}
+
+h1 {
+    position: relative;
+    top: 35vh;
+    margin: 0;
+    font-size: 5rem;
+}
+
+.btn-warning {
+    position: relative;
+    top: 40vh;
+    padding: .4rem 1.75rem;
+    font-size: 2rem;
+}
+
+span {
+    color: #FFC904;
+}
+
+.nav-item {
+    font-size: 1.5rem;
+}
+
