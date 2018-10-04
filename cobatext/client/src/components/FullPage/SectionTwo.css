@@ -1,0 +1,24 @@
+.about {
+    text-align: center;
+    background-color: #FFC904;
+    height: 100%;
+    width: 100;
+};
+
+.section {
+    margin: none;
+    overflow: hidden;
+}
+
+.shell {
+    width:80%;
+    height: 100%;
+    align-self: center;
+    margin:auto;
+}
+
+.about-header {
+    font-size: 5rem;
+    text-align: left;
+}
+
