@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from "../../components/Nav";
 import { Input, FormBtn } from "../../components/SearchForm";
 import { Container, Row, Col } from "../../components/Grid";
+import API from "../../utils/API";
 
 class Courses extends Component {
   state = {
@@ -15,6 +16,13 @@ class Courses extends Component {
     this.setState({
       [name]: value
     });
+  };
+
+  handleSearch = event => {
+    event.preventDefault();
+    API.getClasses()
+      .then(res => this.setState({ courses: res.data }))
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -36,7 +44,7 @@ class Courses extends Component {
                 onChange={this.handleInputChange}
                 name="courseNumber"
               />
-              <FormBtn>Search</FormBtn>
+              <FormBtn onClick={this.handleSearch}>Search</FormBtn>
             </form>
           </Col>
         </Row>
