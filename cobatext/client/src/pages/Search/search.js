@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Nav from "../../components/Nav";
 import { Input, FormBtn } from "../../components/SearchForm";
 import { Container, Row, Col } from "../../components/Grid";
+import { Class} from "../../components/classCard";
 import API from "../../utils/API";
 
 class Courses extends Component {
@@ -21,7 +23,7 @@ class Courses extends Component {
   handleSearch = event => {
     event.preventDefault();
     API.getClasses()
-      .then(res => this.setState({ courses: res.data }))
+      .then(res => this.setState({ courses: res.data }, console.log(res.data)))
       .catch(err => console.log(err));
   };
 
@@ -48,6 +50,23 @@ class Courses extends Component {
             </form>
           </Col>
         </Row>
+        {this.state.courses.length ? (
+          <Container>
+            {this.state.courses.map(course => (
+              <Class key={course._id}>
+                <Link to={"/search/" + course._id}>
+                  <div className="card-body">
+                    <h5 className="card-title">
+                      {course.major} {course.courseNumber} {course.className}
+                    </h5>
+                  </div>
+                </Link>
+              </Class>
+            ))}
+          </Container>
+        ) : (
+          <h3>No Results to Display</h3>
+        )}
       </Container>
     );
   }

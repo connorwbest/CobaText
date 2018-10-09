@@ -1,3 +1,4 @@
 module.exports = {
-    Class: require("./class")
+    Class: require("./class"),
+    Review: require("./review")
   };

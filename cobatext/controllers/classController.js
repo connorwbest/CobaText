@@ -36,5 +36,17 @@ module.exports = {
       .catch(function(err) {
         res.json(err);
       });
-  }
+  },
+  findById: function(req, res) {
+    db.Class
+      .findById(req.params.id)
+      .then(classes => res.json(classes))
+      .catch(err => res.status(422).json(err));
+  },
+  create: function(req, res) {
+    db.Review
+      .create(req.body)
+      .then(review => res.json(review))
+      .catch(err => res.status(422).json(err));
+  },
 };

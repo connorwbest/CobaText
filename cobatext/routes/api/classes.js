@@ -1,16 +1,14 @@
 const router = require("express").Router();
 const classController = require("../../controllers/classController");
 
-router.route("/all")
+router.route("/search/all")
     .get(classController.findAll);
 
-router.route('/:number')
-    .get(classController.findByNumber);
+router.route("/search/:id")
+    .get(classController.findById)
 
-router.route('/null/:major')
-    .get(classController.findByMajor);
+router.route("/search/reviews")
+    .post(classController.create)
 
-router.route('/:number/:major')
-    .get(classController.findOne)
 
 module.exports = router;

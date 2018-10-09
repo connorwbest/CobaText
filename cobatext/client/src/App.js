@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Search from "./pages/Search";
+import Class from './pages/Class';
 
 const App = () => (
   <Router>
@@ -9,6 +10,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/search" component={Search} />
+        <Route exact path='/search/:id' component={Class} />
       </Switch>
     </div>
   </Router>

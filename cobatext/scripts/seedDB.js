@@ -7,22 +7,38 @@ const classSeed = [
   {
     major: "MAR",
     courseNumber: "3023",
-    className: "Marketing"
+    className: "Marketing",
+    reviews: [],
+    grade: [],
+    purchase: [],
+    use: []
   },
   {
     major: "MAR",
     courseNumber: "3203",
-    className: "Supply Chain and Operations Management"
+    className: "Supply Chain and Operations Management",
+    reviews: [],
+    grade: [],
+    purchase: [],
+    use: []
   },
   {
     major: "MAR",
     courseNumber: "3323",
-    className: "Integrated Marketing Communication"
+    className: "Integrated Marketing Communication",
+    reviews: [],
+    grade: [],
+    purchase: [],
+    use: []
   },
   {
     major: "MAR",
     courseNumber: "3391",
-    className: "Professional Selling"
+    className: "Professional Selling",
+    reviews: [],
+    grade: [],
+    purchase: [],
+    use: []
   }
 ];
 
