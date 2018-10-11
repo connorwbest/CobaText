@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Nav from "../../components/Nav";
 import { Input, FormBtn } from "../../components/SearchForm";
 import { Container, Row, Col } from "../../components/Grid";
-import { Class} from "../../components/classCard";
+import { Class } from "../../components/classCard";
 import API from "../../utils/API";
 
 class Courses extends Component {
@@ -27,6 +27,13 @@ class Courses extends Component {
       .catch(err => console.log(err));
   };
 
+  searchCourse = event => {
+    event.preventDefault();
+    API.findOneByNumber({ number: this.state.courseNumber })
+      .then(res => this.setState({ courses: res.data }, console.log(res.data)))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <Container fluid>
@@ -39,12 +46,14 @@ class Courses extends Component {
                 value={this.state.major}
                 onChange={this.handleInputChange}
                 name="major"
+                placeholder="Mar"
               />
               <label>Course Number</label>
               <Input
                 value={this.state.courseNumber}
                 onChange={this.handleInputChange}
                 name="courseNumber"
+                placeholder="3203"
               />
               <FormBtn onClick={this.handleSearch}>Search</FormBtn>
             </form>
