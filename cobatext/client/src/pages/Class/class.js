@@ -41,7 +41,7 @@ class Class extends Component {
 
   // Grabs the relevant information for the class clicked on search page
   loadClass = () => {
-    API.getClass(this.props.match.params.id)
+    API.getClassPage(this.props.match.params.id)
       .then(res => this.setState({ course: res.data, avgGrade: this.calcAvg(res.data.grade), avgPurchase: this.calcAvg(res.data.purchase), avgUsage: this.calcAvg(res.data.use) }))
       .catch(err => console.log(err));
   };

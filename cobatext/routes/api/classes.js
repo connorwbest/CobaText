@@ -4,7 +4,7 @@ const classController = require("../../controllers/classController");
 router.route("/search/all")
     .get(classController.findAll)
 
-router.route("/search/:id")
+router.route("/search/class/:id")
     .get(classController.findById)
 
 router.route("/search/reviews")
@@ -14,7 +14,7 @@ router.route("/search/reviews")
 router.route("/search/reviews/:id")
     .get(classController.findReviews)
 
-router.route("/search/course")
+router.route("/search/:number")
     .get(classController.findByNumber)
 
 

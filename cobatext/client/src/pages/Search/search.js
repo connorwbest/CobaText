@@ -9,6 +9,7 @@ import API from "../../utils/API";
 class Courses extends Component {
   state = {
     courses: [],
+    results: [],
     major: "",
     courseNumber: ""
   };
@@ -20,19 +21,21 @@ class Courses extends Component {
     });
   };
 
-  handleSearch = event => {
+  loadClasses = (event) => {
     event.preventDefault();
-    API.getClasses()
+    API.getClasses({})
       .then(res => this.setState({ courses: res.data }, console.log(res.data)))
       .catch(err => console.log(err));
   };
 
-  searchCourse = event => {
+  loadByNumber = (event) => {
     event.preventDefault();
-    API.findOneByNumber({ number: this.state.courseNumber })
-      .then(res => this.setState({ courses: res.data }, console.log(res.data)))
-      .catch(err => console.log(err));
+    console.log(this.state.courseNumber);
+    API.getClass(this.state.courseNumber)
+    .then(res => this.setState({courses: res.data}))
+    .catch(err => console.log(err));
   };
+
 
   render() {
     return (
@@ -55,7 +58,7 @@ class Courses extends Component {
                 name="courseNumber"
                 placeholder="3203"
               />
-              <FormBtn onClick={this.handleSearch}>Search</FormBtn>
+              <FormBtn onClick={this.loadByNumber}>Search</FormBtn>
             </form>
           </Col>
         </Row>
@@ -63,7 +66,7 @@ class Courses extends Component {
           <Container>
             {this.state.courses.map(course => (
               <Class key={course._id}>
-                <Link to={"/search/" + course._id}>
+                <Link to={"/search/class/" + course._id}>
                   <div className="card-body">
                     <h5 className="card-title">
                       {course.major} {course.courseNumber} {course.className}
@@ -74,7 +77,7 @@ class Courses extends Component {
             ))}
           </Container>
         ) : (
-          <h3>No Results to Display</h3>
+          <h3 >No Results to Display</h3>
         )}
       </Container>
     );
