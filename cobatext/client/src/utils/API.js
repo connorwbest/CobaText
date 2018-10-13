@@ -4,11 +4,14 @@ export default {
     getClasses: function() {
         return axios.get('/search/all');
     },
-    findOneByNumber: function(number) {
-        return axios.get('/search/course/', number)
+    getClass: function(major, number) {
+        return axios.get('/search/course/'+ major +'/' + number)
     },
-    getClass: function(id) {
-        return axios.get('/search/' + id)
+    getByMajor: function(major) {
+        return axios.get('/search/courses/all/' + major)
+    },
+    getClassPage: function(id) {
+        return axios.get('/search/course/' + id)
     },
     createReview: function(review) {
         return axios.post('/search/reviews', review)
