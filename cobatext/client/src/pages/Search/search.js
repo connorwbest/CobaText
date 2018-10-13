@@ -21,21 +21,25 @@ class Courses extends Component {
     });
   };
 
-  loadClasses = (event) => {
+  loadClasses = event => {
     event.preventDefault();
     API.getClasses({})
       .then(res => this.setState({ courses: res.data }, console.log(res.data)))
       .catch(err => console.log(err));
   };
 
-  loadByNumber = (event) => {
+  loadClass = event => {
     event.preventDefault();
-    console.log(this.state.courseNumber);
-    API.getClass(this.state.courseNumber)
-    .then(res => this.setState({courses: res.data}))
-    .catch(err => console.log(err));
+    if (!this.state.courseNumber) {
+      API.getByMajor(this.state.major).then(res =>
+        this.setState({ courses: res.data })
+      )
+    } else {
+      API.getClass(this.state.major, this.state.courseNumber)
+        .then(res => this.setState({ courses: res.data }))
+        .catch(err => console.log(err));
+    }
   };
-
 
   render() {
     return (
@@ -58,7 +62,7 @@ class Courses extends Component {
                 name="courseNumber"
                 placeholder="3203"
               />
-              <FormBtn onClick={this.loadByNumber}>Search</FormBtn>
+              <FormBtn onClick={this.loadClass}>Search</FormBtn>
             </form>
           </Col>
         </Row>
@@ -77,7 +81,7 @@ class Courses extends Component {
             ))}
           </Container>
         ) : (
-          <h3 >No Results to Display</h3>
+          <h3>No Results to Display</h3>
         )}
       </Container>
     );

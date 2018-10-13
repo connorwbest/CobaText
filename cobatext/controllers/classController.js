@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = {
   findByNumber: function(req, res) {
-    db.Class.find({ courseNumber: req.params.number})
+    db.Class.find({ courseNumber: req.params.number, major: req.params.major})
       .then(function(classes) {
         res.json(classes);
       })
