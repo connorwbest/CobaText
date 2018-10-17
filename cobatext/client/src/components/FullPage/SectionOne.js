@@ -1,5 +1,6 @@
 import React from "react";
 import "./SectionOne.css";
+import {Link} from 'react-router-dom';
 
 export const SectionOne = () => {
   return (
@@ -9,7 +10,7 @@ export const SectionOne = () => {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <a className="nav-link" href="#firstPage">
-                Search
+                Start
               </a>
             </li>
             <li className="nav-item">
@@ -24,10 +25,10 @@ export const SectionOne = () => {
             </li>
           </ul>
         </nav>
-        <h1>
-          <span>Pass</span> Classes. <span>Save</span> Money.
+        <h1 className='site-heading'>
+          <span className='title-span'>Pass</span> Classes. <span className="title-span">Save</span> Money.
         </h1>
-        <button className="btn btn-warning btn-lg">Start</button>
+        <Link to = "/search"><button className="btn btn-warning btn-lg" href='/search'>Start</button></Link>
       </div>
     </div>
   );

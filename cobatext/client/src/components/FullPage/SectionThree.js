@@ -1,5 +1,6 @@
 import React from "react";
-import './SectionThree.css';
+import "./SectionThree.css";
+
 
 export const SectionThree = () => {
   return (
@@ -9,7 +10,7 @@ export const SectionThree = () => {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
               <a className="nav-link" href="#firstPage">
-                Search
+                Start
               </a>
             </li>
             <li className="nav-item">
@@ -25,16 +26,14 @@ export const SectionThree = () => {
           </ul>
         </nav>
 
-        
-          <div className="shell">
-            <div className="shell-header">
-              <h2 className="promo-header">We'll Pay for Your Input!</h2>
-            </div>
-            <div className="shell-body">
-              <p>Text text text text text text text text text</p>
-            </div>
+        <div className="shell">
+          <div className="shell-header">
+            <h2 className="promo-header">We'll Pay for Your Input!</h2>
           </div>
-        
+          <div className="shell-body">
+            <p>Text text text text text text text text text</p>
+          </div>
+        </div>
       </div>
     </div>
   );

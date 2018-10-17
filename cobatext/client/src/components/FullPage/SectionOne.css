@@ -12,7 +12,7 @@
     overflow: hidden;
 }
 
-h1 {
+.site-heading {
     position: relative;
     top: 35vh;
     margin: 0;
@@ -26,7 +26,7 @@ h1 {
     font-size: 2rem;
 }
 
-span {
+.title-span {
     color: #FFC904;
 }
 
