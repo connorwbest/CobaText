@@ -1,6 +1,6 @@
 import React from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
-/* import Nav from "../../components/Nav"; */
+
 import {
   SectionOne,
   SectionTwo,

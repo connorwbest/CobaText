@@ -1,0 +1,47 @@
+
+
+.signUp {
+    width: 500px;
+    height: 50vh;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 25vh;
+    padding: 10px;
+    z-index: 1;
+}
+
+.signUp-head {
+    text-align: center;
+}
+
+.signUp-link {
+    text-align: center;
+    text-decoration: none;
+}
+
+.form-group-signUp {
+    padding:0 10px 0 10px;
+}
+
+.signUp-label {
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.signUp-btn{
+    text-align: center;
+    width: 75px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #FFC904;
+    color: #fff;
+    padding: 5px;
+    margin: 2%;
+}
+
+.signUp-btn:hover {
+    background-color: #FFC904;
+    color: black;
+    cursor: pointer;
+}

@@ -19,6 +19,17 @@
 
 .about-header {
     font-size: 5rem;
-    text-align: left;
+    text-align: center;
+}
+
+.about-description {
+    color: black;
+    font-size: 1.8rem;
+    font-weight: bold
+}
+
+.list-span {
+    font-weight: bold;
+    font-size: 2rem;
 }
 

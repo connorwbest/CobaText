@@ -1,72 +1,47 @@
-import React, { Component } from "react";
-import { Input, FormBtn } from "../../components/SearchForm";
-import { Container } from "../../components/Grid";
-import API from "../../utils/API";
+import React from "react";
+import { Link } from "react-router-dom";
+import "./signUp.css";
 
-class SignUp extends Component {
-  state = {
-    username: "",
-    password: ""
-  };
-
-  // Captures input changes on the SignUp form
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-    console.log("sign-up form, username:");
-    console.log(this.state.username);
-    API.signUp({username: this.state.username, password: this.state.password})
-    .then(res => {
-        console.log('login response:')
-        console.log(res)
-        if(res.status === 200) {
-            // update App.js state
-            this.props.updateUser({
-                loggedIn: true,
-                username: res.data.username
-            })
-            this.setState({
-                reDirectTo: '/'
-            })
-        } else {
-            console.log('Sign-up error')
-        }
-    })
-    .catch(error => {
-        console.log('sign-up server error')
-        console.log(error)
-    })
-  };
-
-  render() {
-    return (
-      <Container>
-        <div>
-          <form>
-            <label>Email</label>
-            <Input
-              value={this.state.username}
-              onChange={this.handleInputChange}
+const SignUp = props => {
+  return (
+      <div className="signUp">
+        <h1 className="signUp-head">SIGN UP</h1>
+        <Link to="/signin">
+          <p className="signUp-link">Go to sign in</p>
+        </Link>
+        <form className="signUp-form">
+          <label className="signUp-label">Email</label>
+          <div className="form-group-signUp">
+            <input
+              className="form-control"
+              value={props.username}
+              onChange={props.handleChange}
               name="username"
+              type="email"
+              placeholder="example@email.com"
             />
-            <label>Password</label>
-            <Input
-              value={this.state.password}
-              onChange={this.handleInputChange}
+          </div>
+          <label className="signUp-label">Password</label>
+          <div className="form-group-signUp">
+            <input
+              className="form-control"
               name="password"
+              type="password"
+              value={props.password}
+              onChange={props.handleChange}
             />
-            <FormBtn onClick={this.handleSubmit}>Submit</FormBtn>
-          </form>
-        </div>
-      </Container>
-    );
-  }
-}
+          </div>
+          <button
+            className="signUp-btn"
+            type="submit"
+            name="/auth/signup"
+            onClick={props.handleSubmit}
+          >
+            Sign Up
+          </button>
+        </form>
+      </div>
+  );
+};
 
 export default SignUp;
