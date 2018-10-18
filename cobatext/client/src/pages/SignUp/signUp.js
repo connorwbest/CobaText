@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Helmet from "react-helmet";
 import "./signUp.css";
 
 const SignUp = props => {
   return (
+    <div>
+      <Helmet bodyAttributes={{ style: "background-color : #000000" }} />
+	  <h1 className='signUp-title'>COBA <span className='title-span'>TEXT</span></h1>
       <div className="signUp">
         <h1 className="signUp-head">SIGN UP</h1>
-        <Link to="/signin">
+        <Link style={{ textDecoration: "none" }} to="/signin">
           <p className="signUp-link">Go to sign in</p>
         </Link>
         <form className="signUp-form">
@@ -18,7 +22,7 @@ const SignUp = props => {
               onChange={props.handleChange}
               name="username"
               type="email"
-              placeholder="example@email.com"
+              placeholder="first.last@knights.ucf.edu"
             />
           </div>
           <label className="signUp-label">Password</label>
@@ -41,6 +45,7 @@ const SignUp = props => {
           </button>
         </form>
       </div>
+    </div>
   );
 };
 
