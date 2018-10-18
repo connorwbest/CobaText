@@ -1,0 +1,84 @@
+#class-jumbo {
+    background-color: #FFC904;
+    margin-bottom: 0;
+}
+
+.nav-pills {
+    background-color: black;
+}
+
+.class-review-btn {
+    cursor: pointer;
+}
+
+.class-form-btn {
+    cursor: pointer;
+}
+
+.no-reviews-container {
+    text-align: center;
+    width: 100%;
+    height: 700px;
+    overflow-y: scroll;
+}
+
+.no-reviews {
+    position: relative;
+    top: 20vh;
+}
+
+.display-4 {
+    font-weight: bold;
+}
+
+.class-review-form {
+    padding: 10px;
+}
+
+.class-form-label {
+    font-size: 1.5rem;
+}
+
+.student-review-card {
+    border: 2px solid black;
+    width: 80%;
+    margin-left: 10%;
+    display: block;
+    padding: 0;
+}
+
+.student-info {
+    display: block;
+    margin-left: 15%;
+    margin-top: 3%;
+    padding: 10px;
+}
+
+
+.review-info {
+    float: left;
+    text-align: left;
+    width: 32%;
+    height: 100%;
+    border-right: 2px solid black;
+}
+
+.summary-section {
+    float: right;
+    text-align: center;
+    width: 68%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.summary-title {
+    text-decoration: underline;
+}
+
+.summary {
+    text-align: left;
+    margin-left: 5%;
+    padding: 10px;
+    font-weight: 120%;
+    font-size: 1.25rem;
+}

@@ -114,7 +114,7 @@ class Courses extends Component {
                       </h5>
                       <ul className="list-group list-group-flush">
                         <li className="list-group-item">Avg Grade: {this.calcAvg(course.grade)}%</li>
-                        <li className="list-group-item">Purchase Rate: {this.calcAvg(course.purchase)}</li>
+                        <li className="list-group-item">Purchase Rate: {this.calcAvg(course.purchase)* 100}%</li>
                         <li className="list-group-item">Avg Usage: {this.calcAvg(course.use)} hr/week</li>
                       </ul>
                     </ClassBody>
