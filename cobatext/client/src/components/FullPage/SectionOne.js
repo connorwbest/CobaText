@@ -6,7 +6,7 @@ export const SectionOne = () => {
   return (
     <div className="section">
       <div className="start">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-black">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <a className="nav-link" href="#firstPage">

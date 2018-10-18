@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Nav from "../../components/Nav";
 import { Input, FormBtn } from "../../components/SearchForm";
 import { Container, Row, Col } from "../../components/Grid";
-import { Class } from "../../components/classCard";
+import { Class, ClassBody } from "../../components/classCard";
 import API from "../../utils/API";
+import "./search.css";
+import NoResults from "./black-scribble-png-5.png";
 
 class Courses extends Component {
   state = {
@@ -21,6 +22,16 @@ class Courses extends Component {
     });
   };
 
+   // Function for calculating the average of an array
+   calcAvg = array => {
+    let sum = 0;
+    array.forEach(number => {
+      sum += number;
+    });
+
+    return (sum / array.length).toFixed(2);
+  };
+
   loadClasses = event => {
     event.preventDefault();
     API.getClasses({})
@@ -33,7 +44,7 @@ class Courses extends Component {
     if (!this.state.courseNumber) {
       API.getByMajor(this.state.major).then(res =>
         this.setState({ courses: res.data })
-      )
+      );
     } else {
       API.getClass(this.state.major, this.state.courseNumber)
         .then(res => this.setState({ courses: res.data }))
@@ -44,44 +55,88 @@ class Courses extends Component {
   render() {
     return (
       <Container fluid>
-        <Nav />
+        <nav className="navbar navbar-expand-lg navbar-dark bg-black">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link className="nav-react-link" to="/">
+                <a className="nav-link" href="#firstPage">
+                  Home
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <a className="nav-link" href="#secondPage">
+                Search
+              </a>
+            </li>
+          </ul>
+        </nav>
         <Row>
           <Col size="md-12">
-            <form>
-              <label>Major</label>
-              <Input
-                value={this.state.major}
-                onChange={this.handleInputChange}
-                name="major"
-                placeholder="Mar"
-              />
-              <label>Course Number</label>
-              <Input
-                value={this.state.courseNumber}
-                onChange={this.handleInputChange}
-                name="courseNumber"
-                placeholder="3203"
-              />
-              <FormBtn onClick={this.loadClass}>Search</FormBtn>
-            </form>
+            <div className="jumbotron" id="search-jumbo">
+              <form className="searchForm">
+                <label className="search-label">Major</label>
+                <Input
+                  value={this.state.major}
+                  onChange={this.handleInputChange}
+                  name="major"
+                  placeholder="Mar"
+                />
+                <label className="search-label">Course Number</label>
+                <Input
+                  value={this.state.courseNumber}
+                  onChange={this.handleInputChange}
+                  name="courseNumber"
+                  placeholder="3203"
+                />
+                <FormBtn onClick={this.loadClass} disabled={!this.state.major}>Search</FormBtn>
+              </form>
+            </div>
           </Col>
         </Row>
         {this.state.courses.length ? (
-          <Container>
-            {this.state.courses.map(course => (
-              <Class key={course._id}>
-                <Link to={"/search/class/" + course._id}>
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      {course.major} {course.courseNumber} {course.className}
-                    </h5>
-                  </div>
+          <div className="results-container">
+            <div className="search-title">
+              <h3 className="search-title-text">Search Results</h3>
+            </div>
+            <div className="search-results">
+              {this.state.courses.map(course => (
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to={"/search/class/" + course._id}
+                >
+                  <Class key={course._id}>
+                    <ClassBody>
+                      <h5 className="card-title">
+                        {course.major} {course.courseNumber}
+                        <br />
+                        {course.className}
+                      </h5>
+                      <ul className="list-group list-group-flush">
+                        <li className="list-group-item">Avg Grade: {this.calcAvg(course.grade)}%</li>
+                        <li className="list-group-item">Purchase Rate: {this.calcAvg(course.purchase)}</li>
+                        <li className="list-group-item">Avg Usage: {this.calcAvg(course.use)} hr/week</li>
+                      </ul>
+                    </ClassBody>
+                  </Class>
                 </Link>
-              </Class>
-            ))}
-          </Container>
+              ))}
+            </div>
+          </div>
         ) : (
-          <h3>No Results to Display</h3>
+          <div className="search-none">
+            <div className="search-title">
+              <h3 className="search-title-text">Search Results</h3>
+            </div>
+            <div className="no-results-container">
+              <img
+                className="no-results-img"
+                src={NoResults}
+                alt="a graphic that says no results"
+              />
+              <h3 className="no-results">No Results to Display</h3>
+            </div>
+          </div>
         )}
       </Container>
     );

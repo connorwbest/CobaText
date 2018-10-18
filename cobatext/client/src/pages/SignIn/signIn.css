@@ -1,4 +1,4 @@
-.signUp {
+.signIn {
     width: 500px;
     height: 50vh;
     border: 2px solid #FFC904;
@@ -10,11 +10,7 @@
     z-index: 1;
 }
 
-.signUp-head {
-    text-align: center;
-}
-
-.signUp-title {
+.signIn-title {
     color: #fff;
     text-align: center;
     position: relative;
@@ -22,27 +18,30 @@
     font-size: 3rem;
 }
 
+.signIn-head {
+    text-align: center;
+}
 
-.signUp-link {
+.signIn-link {
     text-align: center;
     text-decoration: none;
     color: #FFC904;
 }
 
-.signUp-link:hover {
+.signIn-link:hover {
     font-size: 110%;
 }
 
-.form-group-signUp {
-    padding:0 10px 0 10px;
-}
-
-.signUp-label {
+.signIn-label {
     padding-left: 10px;
     padding-top: 5px;
 }
 
-.signUp-btn{
+.form-group-signIn {
+    padding:0 10px 0 10px;
+}
+
+.signIn-btn{
     text-align: center;
     width: 75px;
     height: 35px;
@@ -53,7 +52,7 @@
     margin: 2%;
 }
 
-.signUp-btn:hover {
+.signIn-btn:hover {
     background-color: #FFC904;
     color: black;
     cursor: pointer;
