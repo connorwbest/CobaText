@@ -13,12 +13,12 @@ class Class extends Component {
     name: "",
     email: "",
     grade: 0,
-    purchase: 1,
+    cost: 0,
     usage: 0,
     summary: "",
 
     avgGrade: 0,
-    avgPurchase: 0,
+    avgCost: 0,
     avgUsage: 0,
 
     reviewActive: 1,
@@ -67,7 +67,7 @@ class Class extends Component {
         this.setState({
           course: res.data,
           avgGrade: this.calcAvg(res.data.grade),
-          avgPurchase: this.calcAvg(res.data.purchase),
+          avgCost: this.calcAvg(res.data.cost),
           avgUsage: this.calcAvg(res.data.use)
         })
       )
@@ -88,7 +88,7 @@ class Class extends Component {
       class: this.state.course._id,
       name: this.state.name,
       email: this.state.email,
-      purchase: this.state.purchase,
+      cost: this.state.cost,
       grade: this.state.grade,
       usage: this.state.usage,
       summary: this.state.summary
@@ -104,7 +104,7 @@ class Class extends Component {
     API.updateClass({
       class: this.state.course._id,
       grade: this.state.grade,
-      purchase: this.state.purchase,
+      cost: this.state.cost,
       usage: this.state.usage
     }).then(this.loadClass());
   };
@@ -113,9 +113,8 @@ class Class extends Component {
   resetState = () => {
     this.setState({
       name: "",
-      email: "",
       grade: 0,
-      purchase: 1,
+      cost: 0,
       usage: 0,
       summary: ""
     });
@@ -150,26 +149,27 @@ class Class extends Component {
           <h2 className="display-4">
             {this.state.course.major} {this.state.course.courseNumber}
           </h2>
+          <p className="lead">{this.state.course.professor}</p>
           <p className="lead">{this.state.course.className}</p>
           <hr className="my-4" />
           <h3>Avg Grade: {this.state.avgGrade}%</h3>
-          <h3>Purchase Rate: {this.state.avgPurchase * 100}%</h3>
+          <h3>Avg Cost: ${this.state.avgCost}</h3>
           <h3>Usage Time: {this.state.avgUsage} hours per week</h3>
         </div>
         <div className="class-tabs">
-          <ul class="nav nav-pills nav-fill">
-            <li class="nav-item">
+          <ul className="nav nav-pills nav-fill">
+            <li className="nav-item">
               <a
-                class="nav-link class-review-btn"
+                className="nav-link class-review-btn"
                 onClick={this.reviewActive}
                 style={{ color: this.linkStylng(this.state.reviewActive) }}
               >
                 Reviews
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link class-form-btn"
+                className="nav-link class-form-btn"
                 onClick={this.formActive}
                 style={{ color: this.linkStylng(this.state.formActive) }}
               >
@@ -186,12 +186,12 @@ class Class extends Component {
                   <div className='review-info'>
                     <h2 className="student-info">{review.name}</h2>
                     <h2 className="student-info">
-                      Purchased: {review.purchase}
+                      Cost: ${review.cost}
                     </h2>
 
-                    <h2 className="student-info">Grade: {review.grade}</h2>
+                    <h2 className="student-info">Grade: {review.grade}%</h2>
 
-                    <h2 className="student-info">usage: {review.usage}</h2>
+                    <h2 className="student-info">usage: {review.usage} hrs/week</h2>
                   </div>
                   <div className='summary-section'>
                     <h2 className='summary-title'>Review</h2>
@@ -216,15 +216,6 @@ class Class extends Component {
                   onChange={this.handleInputChange}
                   name="name"
                 />
-                <label className="class-form-label">
-                  Email (Not displayed in review)
-                </label>
-                <Input
-                  value={this.state.email}
-                  onChange={this.handleInputChange}
-                  name="email"
-                  placeholder="email@knights.ucf.edu"
-                />
                 <label className="class-form-label">Grade</label>
                 <Input
                   value={this.state.grade}
@@ -233,17 +224,17 @@ class Class extends Component {
                   type="number"
                 />
                 <label className="class-form-label">
-                  Did you Purchase the textbook?(1 for Yes, 0 for No)
+                  How much did you pay for the class materials? (number only, ex: 60)
                 </label>
                 <Input
-                  value={this.state.purchase}
+                  value={this.state.cost}
                   onChange={this.handleInputChange}
-                  name="purchase"
+                  name="cost"
                   type="number"
                 />
                 <label className="class-form-label">
-                  About how many hours a week did you use the textbook? (if no
-                  purchase put 0)
+                  About how many hours a week did you use the class materials/textbook? (if no
+                  purchase or no hours, put 0)
                 </label>
                 <Input
                   value={this.state.usage}

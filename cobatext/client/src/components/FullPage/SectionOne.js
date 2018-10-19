@@ -18,12 +18,17 @@ export const SectionOne = () => {
                 About
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="#thirdPage">
                 Promo
               </a>
-            </li>
+            </li> */}
           </ul>
+          <li className="nav-item active text-align-right">
+              <a className="nav-link brand">
+                COBA<span className='title-span'>TEXT</span>
+              </a>
+            </li>
         </nav>
         <h1 className='site-heading'>
           <span className='title-span'>Pass</span> Classes. <span className="title-span">Save</span> Money.

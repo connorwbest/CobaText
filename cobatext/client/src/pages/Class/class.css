@@ -5,6 +5,7 @@
 
 .nav-pills {
     background-color: black;
+    border-bottom: 2px solid #FFC904;
 }
 
 .class-review-btn {
@@ -14,6 +15,7 @@
 .class-form-btn {
     cursor: pointer;
 }
+
 
 .no-reviews-container {
     text-align: center;

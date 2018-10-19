@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 const reviewSchema = new Schema({
   class: {type: Schema.Types.ObjectId, ref: 'Class'},
   name: {type: String, required: true},
-  email: {type: String, required: true},
-  purchase: {type: Number, required: true},
+  cost: {type: Number, required: true},
   grade: {type: Number, required: true},
   usage: {type: Number, required: true},
   summary: {type: String, required: true}

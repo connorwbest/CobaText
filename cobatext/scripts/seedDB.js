@@ -8,36 +8,90 @@ const classSeed = [
     major: "MAR",
     courseNumber: "3023",
     className: "Marketing",
+    professor: "Carolyn Massiah",
     reviews: [],
     grade: [],
-    purchase: [],
+    cost: [],
+    use: []
+  },
+  {
+    major: "MAR",
+    courseNumber: "3023",
+    className: "Marketing",
+    professor: "Ganga Hewage",
+    reviews: [],
+    grade: [],
+    cost: [],
     use: []
   },
   {
     major: "MAR",
     courseNumber: "3203",
     className: "Supply Chain and Operations Management",
+    professor: "Andrew Johnson",
     reviews: [],
     grade: [],
-    purchase: [],
+    cost: [],
+    use: []
+  },
+  {
+    major: "MAR",
+    courseNumber: "3203",
+    className: "Supply Chain and Operations Management",
+    professor: "Rama Naraharisetti",
+    reviews: [],
+    grade: [],
+    cost: [],
+    use: []
+  },
+  {
+    major: "MAR",
+    courseNumber: "3203",
+    className: "Supply Chain and Operations Management",
+    professor: "Shahed Obeidat",
+    reviews: [],
+    grade: [],
+    cost: [],
     use: []
   },
   {
     major: "MAR",
     courseNumber: "3323",
     className: "Integrated Marketing Communication",
+    professor: "Donel Richemond",
     reviews: [],
     grade: [],
-    purchase: [],
+    cost: [],
     use: []
   },
   {
     major: "MAR",
     courseNumber: "3391",
     className: "Professional Selling",
+    professor: "Stefanie Garcia",
     reviews: [],
     grade: [],
-    purchase: [],
+    cost: [],
+    use: []
+  },
+  {
+    major: "MAR",
+    courseNumber: "3391",
+    className: "Professional Selling",
+    professor: "Karla Desousa",
+    reviews: [],
+    grade: [],
+    cost: [],
+    use: []
+  },
+  {
+    major: "MAR",
+    courseNumber: "3391",
+    className: "Professional Selling",
+    professor: "Brenna Covel",
+    reviews: [],
+    grade: [],
+    cost: [],
     use: []
   }
 ];
