@@ -3,19 +3,18 @@ import ReactFullpage from "@fullpage/react-fullpage";
 
 import {
   SectionOne,
-  SectionTwo,
-  SectionThree
+  SectionTwo
+  
 } from "../../components/FullPage";
 
 const Landing = () => (
   <ReactFullpage
-    anchors={["firstPage", "secondPage", "thirdPage"]}
+    anchors={["firstPage", "secondPage"]}
     render={({ state, fullpageApi }) => {
       return (
         <div>
           <SectionOne />
           <SectionTwo />
-          <SectionThree />
         </div>
       );
     }}

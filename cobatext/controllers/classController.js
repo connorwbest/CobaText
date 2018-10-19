@@ -48,7 +48,7 @@ module.exports = {
       });
   },
   updateClass: function(req, res) {
-    db.Class.findOneAndUpdate({ _id: req.body.class }, {$push: {"grade": req.body.grade, "purchase": req.body.purchase, "use": req.body.usage}})
+    db.Class.findOneAndUpdate({ _id: req.body.class }, {$push: {"grade": req.body.grade, "cost": req.body.cost, "use": req.body.usage}})
       .then(course => res.json(course))
       .catch(err => res.status(422).json(err));
   }

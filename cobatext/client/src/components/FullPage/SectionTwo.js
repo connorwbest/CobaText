@@ -17,12 +17,17 @@ export const SectionTwo = () => {
                 About
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="#thirdPage">
                 Promo
               </a>
-            </li>
+            </li> */}
           </ul>
+          <li className="nav-item active text-align-right">
+              <a className="nav-link brand">
+                COBA<span className='title-span'>TEXT</span>
+              </a>
+            </li>
         </nav>
 
         <div className="slide">
@@ -41,7 +46,7 @@ export const SectionTwo = () => {
                 purchased the required textbook and used it as a decoration on
                 our desk for the next four months, CobaText wants to end this!
                 Instead of hoping that your friend who took the class before is
-                right when he says "You don't need to buy the textbook", now you
+                right when he says "You don't need to buy that", now you
                 can confirm it, put your mind at ease and save some money.
               </p>
             </div>
@@ -54,8 +59,8 @@ export const SectionTwo = () => {
               <h2 className="about-header">How it Works</h2>
                   <p className="about-description"><span className="list-span">1.</span> Sign up with a valid UCF knights email address.</p>
                   <p className="about-description"><span className="list-span">2.</span> Search for all classes by major (MAR, FIN, etc.) or a specific class by its major and class number (MAR 3023).</p>
-                  <p className="about-description"><span className="list-span">3.</span> Get a snapshot of how many people bought the textbook/didn't, how those students did and how often those who purchased used the textbook. 
-                    You also get to see individual reviews to get a better feel for if you need to buy the textbook for that course or can skip out and save $.
+                  <p className="about-description"><span className="list-span">3.</span> Get a snapshot of how much students paid for materials for that specific class and professor, how those students did and how often they used the class materials. 
+                    You also get to see individual reviews to get a better sense of if you should take a class or find an alternative.
                   </p>
                   <p className="about-description"><span className="list-span">4.</span> Leave your own review for classes you've taken to improve the accuracy of ratings and help your fellow classmates!</p>
             </div>
