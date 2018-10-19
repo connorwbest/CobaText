@@ -25,6 +25,13 @@ class Class extends Component {
     formActive: 0
   };
 
+  // Loads the class and its review on page load
+  componentDidMount() {
+    this.loadClass();
+    this.loadReviews();
+  }
+
+
   // Function for calculating the average of an array
   calcAvg = array => {
     let sum = 0;
@@ -119,12 +126,6 @@ class Class extends Component {
       summary: ""
     });
   };
-
-  // Loads the class and its review on page load
-  componentDidMount() {
-    this.loadClass();
-    this.loadReviews();
-  }
 
   render() {
     return (
