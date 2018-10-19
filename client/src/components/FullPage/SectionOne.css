@@ -12,7 +12,7 @@
     overflow: hidden;
 }
 
-.site-heading {
+#slogan {
     position: relative;
     top: 35vh;
     margin: 0;
