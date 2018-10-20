@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-#slogan {
+.slogan {
     position: relative;
     top: 30vh;
     margin: 0;
