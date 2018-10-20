@@ -30,9 +30,9 @@ export const SectionOne = () => {
               </a>
             </li>
         </nav>
-        <h1 id='slogan'>
+        <p id='slogan'>
           <span className='title-span'>Pass</span> Classes. <span className="title-span">Save</span> Money.
-        </h1>
+        </p>
         <Link to = "/search"><button className="btn btn-warning btn-lg" href='/search'>Start</button></Link>
       </div>
     </div>
