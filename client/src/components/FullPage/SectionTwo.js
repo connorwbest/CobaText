@@ -69,7 +69,6 @@ export const SectionTwo = () => {
             </div>
           </div>
         </div>
-        <div className="slide"> Slide 3 </div>
       </div>
     </div>
   );
