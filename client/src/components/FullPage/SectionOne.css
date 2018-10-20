@@ -1,18 +1,18 @@
-.slogan {
-    position: relative;
-    top: 30vh;
-    margin: 0;
-    font-size: 5rem;
-    color: #fff;
-};
-
 .start {
     text-align: center;
     
     background-color: black;
     height: 100%;
     width: 100;
-};
+}
+
+.slogan {
+    position: relative;
+    top: 30vh;
+    margin: 0;
+    font-size: 5rem;
+    color: #fff;
+}
 
 .section {
     margin: none;
