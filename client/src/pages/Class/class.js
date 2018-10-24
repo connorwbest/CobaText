@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { Container, Row, Col } from "../../components/Grid";
 import { Input, FormBtn, TextArea } from "../../components/SearchForm";
+import Footer from "../../components/Footer";
 import "./class.css";
 
 class Class extends Component {
@@ -181,7 +182,7 @@ class Class extends Component {
         </div>
         {this.state.reviewActive === 1 ? (
           this.state.reviews.length ? (
-            <Container fluid>
+            <div className='student-reviews'>
               {this.state.reviews.map(review => (
                 <div className="card student-review-card" key={review._id}>
                   <div className='review-info'>
@@ -201,7 +202,7 @@ class Class extends Component {
                   
                 </div>
               ))}
-            </Container>
+            </div>
           ) : (
             <div className="no-reviews-container">
               <h3 className="no-reviews">No reviews yet!</h3>
@@ -257,6 +258,7 @@ class Class extends Component {
             </Col>
           </Row>
         )}
+        <Footer />
       </Container>
     );
   }

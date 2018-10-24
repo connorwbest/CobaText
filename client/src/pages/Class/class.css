@@ -49,6 +49,12 @@
     padding: 0;
 }
 
+.student-reviews {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
 .student-info {
     display: block;
     margin-left: 15%;

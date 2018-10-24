@@ -93,6 +93,26 @@ const classSeed = [
     grade: [],
     cost: [],
     use: []
+  },
+  {
+    major: "FIN",
+    courseNumber: "2100",
+    className: "Personal Finance and Investments",
+    professor: "Paul Gregg",
+    reviews: [],
+    grade: [],
+    cost: [],
+    use: []
+  },
+  {
+    major: "FIN",
+    courseNumber: "2100",
+    className: "Personal Finance and Investments",
+    professor: "Vijay Maraj",
+    reviews: [],
+    grade: [],
+    cost: [],
+    use: []
   }
 ];
 

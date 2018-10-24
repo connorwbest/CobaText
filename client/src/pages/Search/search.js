@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Input, FormBtn } from "../../components/SearchForm";
 import { Container, Row, Col } from "../../components/Grid";
 import { Class, ClassBody } from "../../components/classCard";
+import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import "./search.css";
 import NoResults from "./black-scribble-png-5.png";
@@ -140,6 +141,7 @@ class Courses extends Component {
             </div>
           </div>
         )}
+        <Footer />
       </Container>
     );
   }
